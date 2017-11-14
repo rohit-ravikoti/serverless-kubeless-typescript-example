@@ -1,9 +1,12 @@
-service: serverless-webpack-typescript-example
+service: serverless-kubeless-webpack-typescript-example
 
 # Add the serverless-webpack plugin
 plugins:
   - serverless-webpack
   - serverless-kubeless
+
+package:
+  individually: true
 
 provider:
   name: kubeless
@@ -12,3 +15,4 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    package: ./.serverless/hello.zip
